@@ -1,0 +1,29 @@
+#include <iostream>
+int main(){
+    //Init of variables
+    double temp;
+    char unit;
+
+    //Take input to questions
+    std::cout << "*** TEMPERATURE CONVERSION *****\n";
+    std::cout << "Please enter your starting temperature: ";
+    std::cin >> temp;
+    std::cout << "Please enter starting unit (C or F): \n";
+    std::cin >> unit;
+
+    //If statements for conversion 
+    if((unit == 'c') || (unit == 'C')){
+        temp = temp * 1.8 + 32; //conv. from C to F
+        std::cout << "Your temperature in F is: "  << temp << std::endl;
+    }
+    else if((unit == 'f') || (unit == 'F')){
+        temp = (temp - 32) / 1.8; //conv. from F to C
+        std::cout << "Your temperature in C is: " << temp << std::endl;
+    }
+    else{ //catch all if there is a mistake in entry to end program
+        std::cout << unit << " Is not a valid unit of temperature!\n";
+    }
+    std::cout << "***********************************\n";
+
+    return 0; //end program
+}
